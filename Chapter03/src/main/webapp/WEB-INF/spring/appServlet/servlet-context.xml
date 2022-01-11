@@ -12,7 +12,10 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory
+	CSS or JS 파일과 같이 정적인 자원들의 경로를 /resources/로 지정
+	sb2-admin 부트스트랩 패키지 파일의 폴더만 resources의 하위폴더로 넣는다
+	-->
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

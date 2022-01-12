@@ -24,7 +24,10 @@ public class BoardController {
 	public void list(Model model) {
 		log.info("list");
 		model.addAttribute("list",service.getList());
-	}
+	} // return이 없어도 view로 다시 보냄 void는 결과를 요청URL로 보냄
+	
+	@GetMapping("/register")
+	public void register() {}
 	
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
@@ -38,9 +41,9 @@ public class BoardController {
 		// redirect:새로고침에 의한 재등록 방지 -> list 페이지로 포워딩
 	}
 	
-	@GetMapping("/get")
+	@GetMapping("/read")
 	public void get(@RequestParam("bno") Long bno, Model model) {
-		log.info("/get");
+		log.info("/read");
 		model.addAttribute("board",service.get(bno));
 	}
 	
